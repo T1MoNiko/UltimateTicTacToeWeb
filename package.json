@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/stoopotec/UltimateTicTacToeWeb/issues"
   },
-  "homepage": "https://github.com/stoopotec/UltimateTicTacToeWeb#readme"
+  "homepage": "https://github.com/stoopotec/UltimateTicTacToeWeb#readme",
+  "dependencies": {
+    "sass": "^1.69.7"
+  }
 }
