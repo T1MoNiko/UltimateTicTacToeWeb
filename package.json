@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/stoopotec/UltimateTicTacToeWeb#readme",
   "dependencies": {
+    "create-react-app": "^5.0.1",
     "sass": "^1.69.7"
   }
 }
