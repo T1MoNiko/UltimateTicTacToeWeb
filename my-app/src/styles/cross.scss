@@ -1,10 +1,4 @@
 
-.container {
-    width: 100px;
-    height: 100px;
-    position: relative;
-}
-
 .line {
     width: 70%;
     height: 15%;
@@ -12,13 +6,38 @@
     position: absolute;
     top: calc(50% - 7.5%);
     left: calc(50% - 35%);
+    box-shadow: 0px 0px 10px 5px rgb(100, 0, 0);
+    animation-duration: .5s;
 
     &:first-child {
         content: " ";
         transform: rotate(45deg);
+        animation-name: show1;
     }
     &:last-child {
         content: " ";
         transform: rotate(135deg);
+        animation-name: show2;
     }
 }
+
+@keyframes show1 {
+    from {
+        opacity: 0;
+        transform: scale(0.1) rotate(45deg);
+    } to {
+        opacity: 1;
+        transform: scale(1) rotate(45deg);
+    }
+}
+
+@keyframes show2 {
+    from {
+        opacity: 0;
+        transform: scale(0.1) rotate(135deg);
+    } to {
+        opacity: 1;
+        transform: scale(1) rotate(135deg);
+    }
+}
+
