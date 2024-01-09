@@ -1,10 +1,12 @@
+import React from "react";
+import Cross from "../components/Cross";
 
-function App() {
-  return (
-   <div>
-
-   </div>
-  );
+const App = () => {
+    return(
+      <>
+        <Cross/>
+      </>
+    )
 }
 
 export default App;
