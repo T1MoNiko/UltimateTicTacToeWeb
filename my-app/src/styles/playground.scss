@@ -1,0 +1,9 @@
+
+
+.playground-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 30vh);
+    grid-template-rows: repeat(3, 30vh);
+    gap: 10px;
+    margin-top: 20px;
+}
