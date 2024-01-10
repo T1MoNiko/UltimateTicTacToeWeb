@@ -46,17 +46,34 @@ const Playground = React.memo(() => {
                 countOfBigCircle.current = 0;
                 
             }
+
             if (flag.current.win) {
                 forceUpdate()
             }
         }
         //eslint-disable-next-line
     }, [indexOfBigCircle, indexOfBigCross, player])
+
+    const restart = () => {
+        flag.current.win = false;
+        forceUpdate();
+        setIndexOfBigCross(prev => prev.filter(item => item === -1));
+        setIndexOfBigCircle(prev => prev.filter(item => item === -1));
+        setPlayer(true);
+    }
     
-    const Text = () => <h1 className="winner-text">Победа за {flag.current.whoWin === 'cross' ? 'крестиками' : 'ноликами' }</h1>
+    const EndOfGame = () => {
+        return (
+            <div className="container-for-end">
+                <h1 className="winner-text">Победа за {flag.current.whoWin === 'cross' ? 'крестиками' : 'ноликами' }</h1>
+                <button className="restart" onClick={() => restart()}>Начать заново</button>
+            </div>
+        )
+    }
+    
     
     return (
-        flag.current.win ? <Text/> :
+        flag.current.win ?  <EndOfGame/> :
         <div className="playground-wrapper">
             {[...new Array(9)].map((_, id) => {
                 return <Box key={id} 
