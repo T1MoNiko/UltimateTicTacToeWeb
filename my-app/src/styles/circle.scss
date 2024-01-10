@@ -1,8 +1,14 @@
+.container-big-circle {
+    width: 30vh;
+    height: 30vh;
+    position: relative;
+}
+
 .circle {
     content: " ";
     width: 70%;
     height: 70%;
-    background: radial-gradient(transparent, transparent 48%, blue 50%);
+    background: radial-gradient(transparent, transparent 45%, blue 50%);
     border-radius: 50%;
     position: absolute;
     top: calc(50% - 35%);
