@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Poppins:wght@300&display=swap');
 
 .playground-wrapper {
     display: grid;
@@ -6,4 +6,12 @@
     grid-template-rows: repeat(3, 30vh);
     gap: 10px;
     margin-top: 20px;
+}
+
+.winner-text {
+    color: white;
+    font-size: 30px;
+    font-family: 'Lora', serif;
+    text-align: center;
+    margin-top: 30vh;
 }
