@@ -4,14 +4,29 @@ import Circle from "./Circle";
 
 const Cell = React.memo((props) => {
     const [state, setState] = useState(3);
-    const {player, funcSet, index, funcSetCross, funcSetCircle, prevCircle, prevCross, setLastMoveIndex, boxIndex, lastMoveIndex} = props;
+    const {player, funcSet, index, funcSetCross, funcSetCircle, prevCircle, prevCross, setLastMoveIndex, boxIndex, lastMoveIndex, element} = props;
 
     const changeSymbol = (player, setPlayer) => {
+        
         if (Number(state) !== 1 && Number(state) !== 0 && (boxIndex === lastMoveIndex || lastMoveIndex === null)) {
             setState(player);
             player ? funcSetCross([...prevCross, index]) : funcSetCircle([...prevCircle, index]);
             setPlayer(!player);
             setLastMoveIndex(index);
+        } else if (boxIndex !== lastMoveIndex) {
+            element.animate(
+                [{
+                  background: "rgba(255, 0, 0, 0.3)", 
+                  boxShadow: "0px 0px 5px 3px rgba(255, 0, 0, 0.3)",
+                }, {
+                  background: "rgba(255, 0, 0, 0)", 
+                  boxShadow: "0px 0px 5px 15px rgba(255, 0, 0, 0)",
+                }],
+                {
+                    duration: 1000,
+                    iteration: 1
+                }
+            )
         }
     }
 

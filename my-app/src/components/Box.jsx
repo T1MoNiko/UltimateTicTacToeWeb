@@ -21,6 +21,8 @@ const Box = React.memo((props) => {
                                 [6, 7, 8], [0, 3, 6],
                                 [1, 4, 7], [2, 5, 8]]; 
 
+    const ref = useRef(null);
+
     useEffect(() => {
         if (update.current) {
             update.current = false;
@@ -54,7 +56,7 @@ const Box = React.memo((props) => {
 
     return (
         flag.current.win ? flag.current.whoWin === 'cross' ? <BigCross/> : <BigCircle/> :
-            <div className="box-wrapper">
+            <div className="box-wrapper" ref={ref}>
                 {[...new Array(9)].map((_, id) => {
                     return <Cell key={id} 
                                 funcSet={funcSet} 
@@ -67,6 +69,7 @@ const Box = React.memo((props) => {
                                 setLastMoveIndex={setLastMoveIndex}
                                 boxIndex={index}
                                 lastMoveIndex={lastMoveIndex}
+                                element={ref.current}
                                 />
                 })}
             </div>
