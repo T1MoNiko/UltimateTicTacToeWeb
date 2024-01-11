@@ -5,7 +5,7 @@ import BigCross from "./BigCross";
 import BigCircle from "./BigCircle";
 
 const Box = React.memo((props) => {
-    const {player, funcSet, index, funcSetBigCross, funcSetBigCircle, prevBigCircle, prevBigCross} = props;
+    const {player, funcSet, index, funcSetBigCross, funcSetBigCircle, prevBigCircle, prevBigCross, setLastMoveIndex, lastMoveIndex} = props;
 
     const flag = useRef({
                         win: false,
@@ -64,6 +64,9 @@ const Box = React.memo((props) => {
                                 funcSetCircle={setIndexOfCircle}
                                 prevCircle={indexOfCircle}
                                 prevCross={indexOfCross}
+                                setLastMoveIndex={setLastMoveIndex}
+                                boxIndex={index}
+                                lastMoveIndex={lastMoveIndex}
                                 />
                 })}
             </div>

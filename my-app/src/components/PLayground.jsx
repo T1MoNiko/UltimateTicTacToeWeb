@@ -17,6 +17,7 @@ const Playground = React.memo(() => {
                                 [0, 1, 2], [3, 4, 5],
                                 [6, 7, 8], [0, 3, 6],
                                 [1, 4, 7], [2, 5, 8]];
+    const [lastMoveIndex, setLastMoveIndex] = useState(null);
     const flag = useRef({
         win: false,
         whoWin: null
@@ -84,6 +85,8 @@ const Playground = React.memo(() => {
                             funcSetBigCircle={setIndexOfBigCircle}
                             prevBigCircle={indexOfBigCircle}
                             prevBigCross={indexOfBigCross}
+                            setLastMoveIndex={setLastMoveIndex}
+                            lastMoveIndex={lastMoveIndex}
                              />
             })}
         </div>
