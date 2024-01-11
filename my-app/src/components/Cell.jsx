@@ -7,7 +7,6 @@ const Cell = React.memo((props) => {
     const {player, funcSet, index, funcSetCross, funcSetCircle, prevCircle, prevCross, setLastMoveIndex, boxIndex, lastMoveIndex, element, prevBigCircle, prevBigCross} = props;
 
     const changeSymbol = (player, setPlayer) => {
-        console.log(prevBigCircle)
         if ((Number(state) !== 1 && Number(state) !== 0 && (boxIndex === lastMoveIndex || lastMoveIndex === null)) || (prevBigCircle.includes(lastMoveIndex) || prevBigCross.includes(lastMoveIndex))) {
             setState(player);
             player ? funcSetCross([...prevCross, index]) : funcSetCircle([...prevCircle, index]);
