@@ -22,7 +22,7 @@ const Playground = React.memo(() => {
         win: false,
         whoWin: null
         }) 
-
+    
     useEffect(() => {
         if (update.current) {
             update.current = false;
@@ -49,7 +49,7 @@ const Playground = React.memo(() => {
             }
 
             if (flag.current.win) {
-                forceUpdate()
+                forceUpdate();
             }
         }
         //eslint-disable-next-line
