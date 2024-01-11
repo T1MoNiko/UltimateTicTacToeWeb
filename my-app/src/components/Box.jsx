@@ -70,6 +70,8 @@ const Box = React.memo((props) => {
                                 boxIndex={index}
                                 lastMoveIndex={lastMoveIndex}
                                 element={ref.current}
+                                prevBigCircle={prevBigCircle}
+                                prevBigCross={prevBigCross}
                                 />
                 })}
             </div>
