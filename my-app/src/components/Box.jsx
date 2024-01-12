@@ -4,17 +4,16 @@ import "../styles/box.scss"
 import BigCross from "./BigCross";
 import BigCircle from "./BigCircle";
 
-const Box = React.memo((props) => {
-    const {player, funcSet, index, funcSetBigCross, funcSetBigCircle, prevBigCircle, prevBigCross, setLastMoveIndex, lastMoveIndex} = props;
+const Box = (props) => {
+    const {player, funcSet, index, funcSetBigCross, funcSetBigCircle, prevBigCircle, prevBigCross, setLastMoveIndex, lastMoveIndex, botIndex, setBotIndex, botIndex2, playground, forceUpdate, mode, indexes} = props;
 
+    console.log(indexes)
     const flag = useRef({
                         win: false,
                         whoWin: null
                      });
     const countOfCross = useRef(0);
     const countOfCircle = useRef(0);
-    const [indexOfCross, setIndexOfCross] = useState([]);
-    const [indexOfCircle, setIndexOfCircle] = useState([]);
     const update = useRef(true);
     const winningCombination = [[0, 4, 8], [2, 4, 6],
                                 [0, 1, 2], [3, 4, 5],
@@ -22,6 +21,9 @@ const Box = React.memo((props) => {
                                 [1, 4, 7], [2, 5, 8]]; 
 
     const ref = useRef(null);
+
+    const [indexOfCross, setIndexOfCross] = useState([]);
+    const [indexOfCircle, setIndexOfCircle] = useState([]);
 
     useEffect(() => {
         if (update.current) {
@@ -54,6 +56,14 @@ const Box = React.memo((props) => {
         //eslint-disable-next-line
     }, [indexOfCross, indexOfCircle]);
 
+    // useEffect(() => {
+    //     console.log(indexOfCircle.slice(0, -1))
+    //     if (indexOfCross.slice(0, -1).includes(botIndex) || indexOfCircle.slice(0, -1).includes(botIndex)) {
+    //         randomNumber.current = Math.floor(Math.random() * 9)
+    //     }
+    // }, [botIndex, indexOfCircle, indexOfCross]) 
+    
+
     return (
         flag.current.win ? flag.current.whoWin === 'cross' ? <BigCross/> : <BigCircle/> :
             <div className="box-wrapper" ref={ref}>
@@ -72,11 +82,18 @@ const Box = React.memo((props) => {
                                 element={ref.current}
                                 prevBigCircle={prevBigCircle}
                                 prevBigCross={prevBigCross}
+                                botIndex={botIndex}
+                                setBotIndex={setBotIndex}
+                                botIndex2={botIndex2}
+                                playground={playground}
+                                forceUpdate={forceUpdate}
+                                mode={mode}
+                                indexes={indexes}
                                 />
                 })}
             </div>
         )
     }
-)
+
 
 export default Box;

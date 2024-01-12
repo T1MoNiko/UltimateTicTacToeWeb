@@ -6,11 +6,44 @@
     animation-name: show;
     animation-duration: 1s;
 }
+.container-for-start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation-name: show;
+    animation-duration: 1s;
+}
+.mode-title {
+    color: white;
+    font-size: 50px;
+    font-family: 'Lora', serif;
+    text-align: center;
+    margin-top: 30vh;
+}
+.mode {
+    display: block;
+    margin-bottom: 30px;
+    width: 30vh;
+    height: 8vh;
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 150%;
+    background-color: #16151a;
+    color: white;
+    border: 2px solid #f5cb78;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .7s ;
+
+    &:hover {
+        background-color: #211f27;
+    }
+}
 .playground-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 30vh);
     grid-template-rows: repeat(3, 30vh);
-    gap: 10px;
+    gap: 20px;
     margin-top: 20px;
     animation-name: show;
     animation-duration: 1s;
